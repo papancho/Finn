@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+            <connections>
+                <outlet property="ExpenseImage" destination="1Js-gf-gwe" id="2ju-Ny-G01"/>
+                <outlet property="ExpenseLabel" destination="9pI-ft-89R" id="Ulj-fV-bjH"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="VPY-0Y-q18"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="190" height="194"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Js-gf-gwe">
+                    <rect key="frame" x="0.0" y="0.0" width="190" height="155.5"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pI-ft-89R">
+                    <rect key="frame" x="74" y="170.5" width="42" height="23.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1Js-gf-gwe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dmk-Gn-iMK"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9pI-ft-89R" secondAttribute="bottom" id="iEh-yU-uiG"/>
+                <constraint firstItem="9pI-ft-89R" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="izL-ej-mMA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1Js-gf-gwe" secondAttribute="trailing" id="oXt-Vi-0v5"/>
+                <constraint firstItem="9pI-ft-89R" firstAttribute="top" secondItem="1Js-gf-gwe" secondAttribute="bottom" constant="15" id="vHb-b9-Fux"/>
+                <constraint firstItem="1Js-gf-gwe" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="vZC-5R-IRa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-329" y="-135"/>
+        </view>
+    </objects>
+</document>

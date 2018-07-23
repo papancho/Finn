@@ -13,6 +13,10 @@
 		CD4FDFF220FFFAFF00FD6BF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4FDFF020FFFAFF00FD6BF7 /* Main.storyboard */; };
 		CD4FDFF420FFFB0100FD6BF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD4FDFF320FFFB0100FD6BF7 /* Assets.xcassets */; };
 		CD4FDFF720FFFB0100FD6BF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD4FDFF520FFFB0100FD6BF7 /* LaunchScreen.storyboard */; };
+		CDCFF02E21067FDD00016262 /* AddExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF02D21067FDD00016262 /* AddExpenseViewController.swift */; };
+		CDCFF0302106862300016262 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF02F2106862300016262 /* Segues.swift */; };
+		CDCFF0342106937100016262 /* ExpenseTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF0332106937100016262 /* ExpenseTypeView.swift */; };
+		CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF0352106937F00016262 /* ExpenseTypeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		CD4FDFF320FFFB0100FD6BF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD4FDFF620FFFB0100FD6BF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CD4FDFF820FFFB0100FD6BF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CDCFF02D21067FDD00016262 /* AddExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseViewController.swift; sourceTree = "<group>"; };
+		CDCFF02F2106862300016262 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
+		CDCFF0332106937100016262 /* ExpenseTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTypeView.swift; sourceTree = "<group>"; };
+		CDCFF0352106937F00016262 /* ExpenseTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTypeView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,10 +79,14 @@
 			isa = PBXGroup;
 			children = (
 				CD4FDFEC20FFFAFF00FD6BF7 /* AppDelegate.swift */,
+				CDCFF02F2106862300016262 /* Segues.swift */,
 				CD4FDFEE20FFFAFF00FD6BF7 /* HomeViewController.swift */,
+				CDCFF0332106937100016262 /* ExpenseTypeView.swift */,
+				CDCFF0352106937F00016262 /* ExpenseTypeView.xib */,
 				CD4FDFF020FFFAFF00FD6BF7 /* Main.storyboard */,
 				CD4FDFF320FFFB0100FD6BF7 /* Assets.xcassets */,
 				CD4FDFF520FFFB0100FD6BF7 /* LaunchScreen.storyboard */,
+				CDCFF02D21067FDD00016262 /* AddExpenseViewController.swift */,
 				CD4FDFF820FFFB0100FD6BF7 /* Info.plist */,
 			);
 			path = Finn;
@@ -149,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4FDFF720FFFB0100FD6BF7 /* LaunchScreen.storyboard in Resources */,
+				CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */,
 				CD4FDFF420FFFB0100FD6BF7 /* Assets.xcassets in Resources */,
 				CD4FDFF220FFFAFF00FD6BF7 /* Main.storyboard in Resources */,
 			);
@@ -205,7 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD4FDFEF20FFFAFF00FD6BF7 /* HomeViewController.swift in Sources */,
+				CDCFF02E21067FDD00016262 /* AddExpenseViewController.swift in Sources */,
 				CD4FDFED20FFFAFF00FD6BF7 /* AppDelegate.swift in Sources */,
+				CDCFF0302106862300016262 /* Segues.swift in Sources */,
+				CDCFF0342106937100016262 /* ExpenseTypeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
