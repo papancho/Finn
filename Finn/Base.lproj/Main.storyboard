@@ -17,12 +17,126 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiq-nA-E8V" customClass="MDCBottomAppBarView">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="4aV-2m-yhJ"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVA-yd-zWJ">
+                                <rect key="frame" x="183" y="154" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iiq-nA-E8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A5D-pM-Pa1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iiq-nA-E8V" secondAttribute="trailing" id="dkr-vR-5ih"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iiq-nA-E8V" secondAttribute="bottom" id="vhT-bR-y3w"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="BottomNavBar" destination="iiq-nA-E8V" id="Ztc-0N-4wY"/>
+                        <segue destination="seD-CO-5B9" kind="presentation" identifier="AddExpenseSegue" id="Bbc-XB-E9g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Add Expense View Controller-->
+        <scene sceneID="Eo4-Zr-A9w">
+            <objects>
+                <viewController id="seD-CO-5B9" customClass="AddExpenseViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xzf-Nx-7LO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What kind of transaction would you like to expense?" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fXZ-hs-0Vi">
+                                <rect key="frame" x="29" y="50" width="292" height="102.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0s-DT-Rwt">
+                                <rect key="frame" x="313" y="50" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Wuq-FX-Xti" userLabel="ExpenseTypes">
+                                <rect key="frame" x="60" y="182.5" width="255" height="424"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="a8e-qG-VgJ" userLabel="ExpenseRowA">
+                                        <rect key="frame" x="0.0" y="0.0" width="255" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rKD-eP-lz8" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-Pt-2OY" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="130" y="0.0" width="125" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="tGV-Ta-g6f" userLabel="ExpenseRowB">
+                                        <rect key="frame" x="0.0" y="148" width="255" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sS-rU-j1y" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ORX-su-60h" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="130" y="0.0" width="125" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="s0s-IV-1Oi" userLabel="ExpenseRowC">
+                                        <rect key="frame" x="0.0" y="296" width="255" height="128"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXu-Gl-ssj" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BJ-1e-dG9" customClass="ExpenseTypeView" customModule="Finn" customModuleProvider="target">
+                                                <rect key="frame" x="130" y="0.0" width="125" height="128"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fXZ-hs-0Vi" firstAttribute="top" secondItem="5tJ-Xi-hb3" secondAttribute="top" constant="30" id="2HR-Vr-SfJ"/>
+                            <constraint firstItem="5tJ-Xi-hb3" firstAttribute="trailing" secondItem="Wuq-FX-Xti" secondAttribute="trailing" constant="60" id="RHm-kI-1RR"/>
+                            <constraint firstItem="5tJ-Xi-hb3" firstAttribute="trailing" secondItem="fXZ-hs-0Vi" secondAttribute="trailing" constant="54" id="Sd2-Qf-kp6"/>
+                            <constraint firstItem="Wuq-FX-Xti" firstAttribute="top" secondItem="fXZ-hs-0Vi" secondAttribute="bottom" constant="30" id="dHY-JL-Bjw"/>
+                            <constraint firstItem="fXZ-hs-0Vi" firstAttribute="leading" secondItem="5tJ-Xi-hb3" secondAttribute="leading" constant="29" id="jGr-2n-l62"/>
+                            <constraint firstItem="Wuq-FX-Xti" firstAttribute="leading" secondItem="5tJ-Xi-hb3" secondAttribute="leading" constant="60" id="xcW-kO-Qnp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5tJ-Xi-hb3"/>
+                    </view>
+                    <connections>
+                        <outlet property="ConferenceExpense" destination="LXu-Gl-ssj" id="nMu-C8-GWK"/>
+                        <outlet property="FoodExpense" destination="4sS-rU-j1y" id="RGd-UZ-mYz"/>
+                        <outlet property="MedicalExpense" destination="cJM-Pt-2OY" id="FO3-Dh-vTc"/>
+                        <outlet property="OnboardingExpense" destination="ORX-su-60h" id="Vry-B7-nHw"/>
+                        <outlet property="OtherExpense" destination="1BJ-1e-dG9" id="MSo-b4-tAE"/>
+                        <outlet property="TravelExpense" destination="rKD-eP-lz8" id="CvZ-X1-jpS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="76i-nz-fBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1004" y="131.78410794602701"/>
         </scene>
     </scenes>
 </document>
