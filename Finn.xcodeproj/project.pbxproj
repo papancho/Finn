@@ -17,6 +17,8 @@
 		CDCFF0302106862300016262 /* Segues.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF02F2106862300016262 /* Segues.swift */; };
 		CDCFF0342106937100016262 /* ExpenseTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF0332106937100016262 /* ExpenseTypeView.swift */; };
 		CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF0352106937F00016262 /* ExpenseTypeView.xib */; };
+		CDCFF03A2106A30A00016262 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF0392106A30A00016262 /* Login.storyboard */; };
+		CDCFF03C2106AA7700016262 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF03B2106AA7700016262 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CDCFF02F2106862300016262 /* Segues.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segues.swift; sourceTree = "<group>"; };
 		CDCFF0332106937100016262 /* ExpenseTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseTypeView.swift; sourceTree = "<group>"; };
 		CDCFF0352106937F00016262 /* ExpenseTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTypeView.xib; sourceTree = "<group>"; };
+		CDCFF0392106A30A00016262 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		CDCFF03B2106AA7700016262 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,8 @@
 				CD4FDFEE20FFFAFF00FD6BF7 /* HomeViewController.swift */,
 				CDCFF0332106937100016262 /* ExpenseTypeView.swift */,
 				CDCFF0352106937F00016262 /* ExpenseTypeView.xib */,
+				CDCFF0392106A30A00016262 /* Login.storyboard */,
+				CDCFF03B2106AA7700016262 /* LoginViewController.swift */,
 				CD4FDFF020FFFAFF00FD6BF7 /* Main.storyboard */,
 				CD4FDFF320FFFB0100FD6BF7 /* Assets.xcassets */,
 				CD4FDFF520FFFB0100FD6BF7 /* LaunchScreen.storyboard */,
@@ -163,6 +169,7 @@
 				CD4FDFF720FFFB0100FD6BF7 /* LaunchScreen.storyboard in Resources */,
 				CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */,
 				CD4FDFF420FFFB0100FD6BF7 /* Assets.xcassets in Resources */,
+				CDCFF03A2106A30A00016262 /* Login.storyboard in Resources */,
 				CD4FDFF220FFFAFF00FD6BF7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCFF03C2106AA7700016262 /* LoginViewController.swift in Sources */,
 				CD4FDFEF20FFFAFF00FD6BF7 /* HomeViewController.swift in Sources */,
 				CDCFF02E21067FDD00016262 /* AddExpenseViewController.swift in Sources */,
 				CD4FDFED20FFFAFF00FD6BF7 /* AppDelegate.swift in Sources */,
