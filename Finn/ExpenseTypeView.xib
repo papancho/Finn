@@ -28,11 +28,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9pI-ft-89R">
                     <rect key="frame" x="74" y="170.5" width="42" height="23.5"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                    <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1Js-gf-gwe" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Dmk-Gn-iMK"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9pI-ft-89R" secondAttribute="bottom" id="iEh-yU-uiG"/>

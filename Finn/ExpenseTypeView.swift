@@ -29,6 +29,7 @@ class ExpenseTypeView: UIView {
         addSubview(contentView)
         contentView.frame = self.bounds
         contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        contentView.backgroundColor = UIColor.clear
     }
     override func awakeFromNib() {
         super.awakeFromNib()
