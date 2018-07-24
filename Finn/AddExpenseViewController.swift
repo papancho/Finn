@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddExpenseViewController: UIViewController {
+class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
 
     @IBOutlet weak var TravelExpense: ExpenseTypeView?
     @IBOutlet weak var MedicalExpense: ExpenseTypeView?
@@ -19,7 +19,20 @@ class AddExpenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.configureExpenseViews()
+        self.configureExpenseViewDelegates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func configureExpenseViews() {
         TravelExpense?.ExpenseImage.image = UIImage(named: "travelIcon")
         TravelExpense?.ExpenseLabel.text = "Travel"
         
@@ -39,25 +52,18 @@ class AddExpenseViewController: UIViewController {
         OtherExpense?.ExpenseLabel.text = "Other"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    func configureExpenseViewDelegates() {
+        TravelExpense?.delegate = self
+        MedicalExpense?.delegate = self
+        OnboardingExpense?.delegate = self
+        FoodExpense?.delegate = self
+        ConferenceExpense?.delegate = self
+        OtherExpense?.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func didPressExpense(sender: ExpenseTypeView) {
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
