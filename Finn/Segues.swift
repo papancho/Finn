@@ -11,6 +11,7 @@ import Foundation
 struct Segues {
     static let homePageToAddExpense = "AddExpenseSegue"
     static let loginToHomePage = "LoginToHomePageSegue"
+    static let addExpenseToAddExpenseInfo = "AddExpenseToAddExpenseInfo"
 }
 
 struct Storyboards {

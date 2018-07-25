@@ -17,6 +17,9 @@ class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
     @IBOutlet weak var ConferenceExpense: ExpenseTypeView!
     @IBOutlet weak var OtherExpense: ExpenseTypeView!
     
+    var selectedExpenseType: String?
+    var selectedExpenseImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureExpenseViews()
@@ -32,6 +35,13 @@ class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.addExpenseToAddExpenseInfo, let vc = segue.destination as? AddExpenseInfoViewController {
+            vc.expenseImage = self.selectedExpenseImage
+            vc.expenseType = self.selectedExpenseType
+        }
+    }
+
     func configureExpenseViews() {
         TravelExpense?.ExpenseImage.image = UIImage(named: "travelIcon")
         TravelExpense?.ExpenseLabel.text = "Travel"
@@ -62,8 +72,9 @@ class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
     }
 
     func didPressExpense(sender: ExpenseTypeView) {
-        
+        self.selectedExpenseType = sender.ExpenseLabel.text
+        self.selectedExpenseImage = sender.ExpenseImage.image
+        self.performSegue(withIdentifier: Segues.addExpenseToAddExpenseInfo, sender: self)
     }
-    
 
 }

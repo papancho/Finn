@@ -43,7 +43,7 @@ class HomeViewController: UIViewController {
         BottomNavBar.trailingBarButtonItems = trailingBarButtonItems
         
         BottomNavBar.floatingButton.setImage(UIImage(named: "plus"), for: .normal)
-        BottomNavBar.floatingButton.layer.backgroundColor = UIColor.init(red: 21, green: 71, blue: 82, alpha: 1.0).cgColor
+        BottomNavBar.floatingButton.layer.backgroundColor = UIColor.init(red: 21/255, green: 71/255, blue: 82/255, alpha: 1.0).cgColor
         BottomNavBar.floatingButton.addTarget(self, action: #selector(addExpenseButtonTapped), for: .touchUpInside)
         
     }

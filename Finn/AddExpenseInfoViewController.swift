@@ -7,13 +7,22 @@
 //
 
 import UIKit
+import DatePickerDialog
 
 class AddExpenseInfoViewController: UIViewController {
 
+    @IBOutlet weak var expenseHeader: ExpenseEntryHeaderView!
+    var expenseImage: UIImage?
+    var expenseType: String?
+    
+    @IBOutlet weak var expenseNameTextField: UITextField!
+   
+    @IBOutlet weak var expenseDateTextField: UITextField!
+    
+    @IBOutlet weak var amountTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +30,21 @@ class AddExpenseInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.expenseHeader.configureExpenseHeader(expenseImage: self.expenseImage, expenseType: self.expenseType)
     }
-    */
-
+    
+    //IB Actions **************************************
+    
+    @IBAction func dateFieldPressed(_ sender: Any) {
+        DatePickerDialog().show("Transaction Date", doneButtonTitle: "Done", cancelButtonTitle: "Cancel", datePickerMode: .date) {
+            (date) -> Void in
+            if let d = date {
+                    self.expenseDateTextField.text = "\(d)"
+            }
+        }
+    }
+    
 }
+

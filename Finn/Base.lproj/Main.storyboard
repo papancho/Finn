@@ -127,11 +127,101 @@
                         <outlet property="OnboardingExpense" destination="ORX-su-60h" id="Vry-B7-nHw"/>
                         <outlet property="OtherExpense" destination="1BJ-1e-dG9" id="MSo-b4-tAE"/>
                         <outlet property="TravelExpense" destination="rKD-eP-lz8" id="CvZ-X1-jpS"/>
+                        <segue destination="GDF-sv-G5r" kind="show" identifier="AddExpenseToAddExpenseInfo" id="T08-1L-7Wa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="76i-nz-fBt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1004" y="131.78410794602701"/>
+        </scene>
+        <!--Add Expense Info View Controller-->
+        <scene sceneID="JJK-ie-pXn">
+            <objects>
+                <viewController id="GDF-sv-G5r" customClass="AddExpenseInfoViewController" customModule="Finn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SI9-Ei-869">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWD-CL-fVE" userLabel="ExpenseHeader" customClass="ExpenseEntryHeaderView" customModule="Finn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="T6Z-zY-K3L"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expense Name:" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1yh-yk-w7B">
+                                <rect key="frame" x="15" y="220" width="113" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gku-Y5-kw9">
+                                <rect key="frame" x="138" y="216" width="222" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date of Transaction:" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi9-Kh-LMU">
+                                <rect key="frame" x="15" y="266" width="143" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bx0-EI-CF0">
+                                <rect key="frame" x="173" y="262" width="187" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="dateFieldPressed:" destination="GDF-sv-G5r" eventType="editingDidBegin" id="PwQ-xR-Cck"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rfe-JF-ObF">
+                                <rect key="frame" x="15" y="312" width="62" height="22"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zJY-BQ-uS9" customClass="CurrencyField" customModule="Finn" customModuleProvider="target">
+                                <rect key="frame" x="92" y="308" width="268" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bx0-EI-CF0" firstAttribute="leading" secondItem="Bi9-Kh-LMU" secondAttribute="trailing" constant="15" id="8P5-zD-PH9"/>
+                            <constraint firstItem="Rfe-JF-ObF" firstAttribute="leading" secondItem="Bi9-Kh-LMU" secondAttribute="leading" id="Bnz-M6-frX"/>
+                            <constraint firstItem="Rfe-JF-ObF" firstAttribute="top" secondItem="Bi9-Kh-LMU" secondAttribute="bottom" constant="24" id="FbU-2m-uGG"/>
+                            <constraint firstItem="Bi9-Kh-LMU" firstAttribute="leading" secondItem="1yh-yk-w7B" secondAttribute="leading" id="HVw-Se-9dk"/>
+                            <constraint firstItem="eWk-me-6KR" firstAttribute="trailing" secondItem="aWD-CL-fVE" secondAttribute="trailing" id="IG0-IE-Xe6"/>
+                            <constraint firstItem="zJY-BQ-uS9" firstAttribute="trailing" secondItem="bx0-EI-CF0" secondAttribute="trailing" id="NGx-7Y-HKW"/>
+                            <constraint firstItem="Bi9-Kh-LMU" firstAttribute="top" secondItem="1yh-yk-w7B" secondAttribute="bottom" constant="24" id="NlX-Oz-IRn"/>
+                            <constraint firstItem="zJY-BQ-uS9" firstAttribute="leading" secondItem="Rfe-JF-ObF" secondAttribute="trailing" constant="15" id="Trd-xT-1SB"/>
+                            <constraint firstItem="aWD-CL-fVE" firstAttribute="leading" secondItem="eWk-me-6KR" secondAttribute="leading" id="W9O-B5-dmG"/>
+                            <constraint firstItem="aWD-CL-fVE" firstAttribute="top" secondItem="SI9-Ei-869" secondAttribute="top" id="YTA-2M-nA7"/>
+                            <constraint firstItem="bx0-EI-CF0" firstAttribute="trailing" secondItem="Gku-Y5-kw9" secondAttribute="trailing" id="cuD-ZG-604"/>
+                            <constraint firstItem="1yh-yk-w7B" firstAttribute="leading" secondItem="eWk-me-6KR" secondAttribute="leading" constant="15" id="gti-ZS-7Zw"/>
+                            <constraint firstItem="Gku-Y5-kw9" firstAttribute="leading" secondItem="1yh-yk-w7B" secondAttribute="trailing" constant="10" id="h2p-Mm-gfI"/>
+                            <constraint firstItem="1yh-yk-w7B" firstAttribute="top" secondItem="aWD-CL-fVE" secondAttribute="bottom" constant="20" id="hGC-BS-5Vh"/>
+                            <constraint firstItem="Gku-Y5-kw9" firstAttribute="centerY" secondItem="1yh-yk-w7B" secondAttribute="centerY" id="hyb-1e-UiR"/>
+                            <constraint firstItem="zJY-BQ-uS9" firstAttribute="centerY" secondItem="Rfe-JF-ObF" secondAttribute="centerY" id="jdy-vu-lGJ"/>
+                            <constraint firstItem="bx0-EI-CF0" firstAttribute="centerY" secondItem="Bi9-Kh-LMU" secondAttribute="centerY" id="nhu-Ml-CPB"/>
+                            <constraint firstItem="eWk-me-6KR" firstAttribute="trailing" secondItem="Gku-Y5-kw9" secondAttribute="trailing" constant="15" id="nqc-uh-SQH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eWk-me-6KR"/>
+                    </view>
+                    <connections>
+                        <outlet property="amountTextField" destination="zJY-BQ-uS9" id="1rN-XV-Q1o"/>
+                        <outlet property="expenseDateTextField" destination="bx0-EI-CF0" id="Fxu-M3-dlm"/>
+                        <outlet property="expenseHeader" destination="aWD-CL-fVE" id="H18-m3-Hao"/>
+                        <outlet property="expenseNameTextField" destination="Gku-Y5-kw9" id="2yP-wM-XfO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nG2-2b-UOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848.8" y="131.78410794602701"/>
         </scene>
     </scenes>
 </document>

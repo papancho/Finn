@@ -18,19 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="finnBowtie" translatesAutoresizingMaskIntoConstraints="NO" id="mth-7H-vaD">
-                                <rect key="frame" x="95" y="245" width="184" height="96"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchScreenLogo" translatesAutoresizingMaskIntoConstraints="NO" id="hiH-hP-ws4">
+                                <rect key="frame" x="0.0" y="143.5" width="375" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="GIG-dS-W1J"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Finn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nx2-vr-EAA">
-                                <rect key="frame" x="163" y="337" width="48" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="leading" secondItem="hiH-hP-ws4" secondAttribute="leading" id="2c9-9M-emH"/>
+                            <constraint firstItem="hiH-hP-ws4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="CPt-Eo-mfX"/>
+                            <constraint firstItem="hiH-hP-ws4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="L9n-MB-zq9"/>
+                            <constraint firstItem="hiH-hP-ws4" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WZT-EY-gsh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -40,6 +41,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="finnBowtie" width="100" height="100"/>
+        <image name="launchScreenLogo" width="500" height="500"/>
     </resources>
 </document>
