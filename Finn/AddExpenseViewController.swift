@@ -76,5 +76,8 @@ class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
         self.selectedExpenseImage = sender.ExpenseImage.image
         self.performSegue(withIdentifier: Segues.addExpenseToAddExpenseInfo, sender: self)
     }
-
+    @IBAction func dismissButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
