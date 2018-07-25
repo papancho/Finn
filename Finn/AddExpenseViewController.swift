@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddExpenseViewController: UIViewController {
+class AddExpenseViewController: UIViewController, ExpenseTypeViewDelegate {
 
     @IBOutlet weak var TravelExpense: ExpenseTypeView?
     @IBOutlet weak var MedicalExpense: ExpenseTypeView?
@@ -17,9 +17,32 @@ class AddExpenseViewController: UIViewController {
     @IBOutlet weak var ConferenceExpense: ExpenseTypeView!
     @IBOutlet weak var OtherExpense: ExpenseTypeView!
     
+    var selectedExpenseType: String?
+    var selectedExpenseImage: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.configureExpenseViews()
+        self.configureExpenseViewDelegates()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Segues.addExpenseToAddExpenseInfo, let vc = segue.destination as? AddExpenseInfoViewController {
+            vc.expenseImage = self.selectedExpenseImage
+            vc.expenseType = self.selectedExpenseType
+        }
+    }
+
+    func configureExpenseViews() {
         TravelExpense?.ExpenseImage.image = UIImage(named: "travelIcon")
         TravelExpense?.ExpenseLabel.text = "Travel"
         
@@ -39,25 +62,22 @@ class AddExpenseViewController: UIViewController {
         OtherExpense?.ExpenseLabel.text = "Other"
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
+    func configureExpenseViewDelegates() {
+        TravelExpense?.delegate = self
+        MedicalExpense?.delegate = self
+        OnboardingExpense?.delegate = self
+        FoodExpense?.delegate = self
+        ConferenceExpense?.delegate = self
+        OtherExpense?.delegate = self
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func didPressExpense(sender: ExpenseTypeView) {
+        self.selectedExpenseType = sender.ExpenseLabel.text
+        self.selectedExpenseImage = sender.ExpenseImage.image
+        self.performSegue(withIdentifier: Segues.addExpenseToAddExpenseInfo, sender: self)
+    }
+    @IBAction func dismissButtonPressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

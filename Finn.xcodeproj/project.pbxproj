@@ -19,6 +19,11 @@
 		CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF0352106937F00016262 /* ExpenseTypeView.xib */; };
 		CDCFF03A2106A30A00016262 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF0392106A30A00016262 /* Login.storyboard */; };
 		CDCFF03C2106AA7700016262 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF03B2106AA7700016262 /* LoginViewController.swift */; };
+		CDCFF03E2107A85A00016262 /* ExpenseEntryHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDCFF03D2107A85A00016262 /* ExpenseEntryHeader.xib */; };
+		CDCFF0402107AA2100016262 /* ExpenseEntryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF03F2107AA2100016262 /* ExpenseEntryHeaderView.swift */; };
+		CDCFF0422107AD0400016262 /* AddExpenseInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF0412107AD0400016262 /* AddExpenseInfoViewController.swift */; };
+		CDCFF0442107DBD600016262 /* ExpenseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF0432107DBD600016262 /* ExpenseModel.swift */; };
+		CDCFF0462107EE1000016262 /* CurrencyField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDCFF0452107EE1000016262 /* CurrencyField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		CDCFF0352106937F00016262 /* ExpenseTypeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseTypeView.xib; sourceTree = "<group>"; };
 		CDCFF0392106A30A00016262 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		CDCFF03B2106AA7700016262 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CDCFF03D2107A85A00016262 /* ExpenseEntryHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpenseEntryHeader.xib; sourceTree = "<group>"; };
+		CDCFF03F2107AA2100016262 /* ExpenseEntryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseEntryHeaderView.swift; sourceTree = "<group>"; };
+		CDCFF0412107AD0400016262 /* AddExpenseInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseInfoViewController.swift; sourceTree = "<group>"; };
+		CDCFF0432107DBD600016262 /* ExpenseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseModel.swift; sourceTree = "<group>"; };
+		CDCFF0452107EE1000016262 /* CurrencyField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +93,18 @@
 			isa = PBXGroup;
 			children = (
 				CD4FDFEC20FFFAFF00FD6BF7 /* AppDelegate.swift */,
+				CDCFF0452107EE1000016262 /* CurrencyField.swift */,
 				CDCFF02F2106862300016262 /* Segues.swift */,
+				CDCFF0432107DBD600016262 /* ExpenseModel.swift */,
 				CD4FDFEE20FFFAFF00FD6BF7 /* HomeViewController.swift */,
 				CDCFF0332106937100016262 /* ExpenseTypeView.swift */,
 				CDCFF0352106937F00016262 /* ExpenseTypeView.xib */,
+				CDCFF03D2107A85A00016262 /* ExpenseEntryHeader.xib */,
+				CDCFF03F2107AA2100016262 /* ExpenseEntryHeaderView.swift */,
 				CDCFF0392106A30A00016262 /* Login.storyboard */,
 				CDCFF03B2106AA7700016262 /* LoginViewController.swift */,
 				CD4FDFF020FFFAFF00FD6BF7 /* Main.storyboard */,
+				CDCFF0412107AD0400016262 /* AddExpenseInfoViewController.swift */,
 				CD4FDFF320FFFB0100FD6BF7 /* Assets.xcassets */,
 				CD4FDFF520FFFB0100FD6BF7 /* LaunchScreen.storyboard */,
 				CDCFF02D21067FDD00016262 /* AddExpenseViewController.swift */,
@@ -166,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CDCFF03E2107A85A00016262 /* ExpenseEntryHeader.xib in Resources */,
 				CD4FDFF720FFFB0100FD6BF7 /* LaunchScreen.storyboard in Resources */,
 				CDCFF0362106937F00016262 /* ExpenseTypeView.xib in Resources */,
 				CD4FDFF420FFFB0100FD6BF7 /* Assets.xcassets in Resources */,
@@ -202,15 +218,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Finn/Pods-Finn-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DatePickerDialog/DatePickerDialog.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/TKSubmitTransition/TKSubmitTransition.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DatePickerDialog.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TKSubmitTransition.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -225,9 +249,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDCFF03C2106AA7700016262 /* LoginViewController.swift in Sources */,
+				CDCFF0402107AA2100016262 /* ExpenseEntryHeaderView.swift in Sources */,
 				CD4FDFEF20FFFAFF00FD6BF7 /* HomeViewController.swift in Sources */,
+				CDCFF0462107EE1000016262 /* CurrencyField.swift in Sources */,
+				CDCFF0442107DBD600016262 /* ExpenseModel.swift in Sources */,
 				CDCFF02E21067FDD00016262 /* AddExpenseViewController.swift in Sources */,
 				CD4FDFED20FFFAFF00FD6BF7 /* AppDelegate.swift in Sources */,
+				CDCFF0422107AD0400016262 /* AddExpenseInfoViewController.swift in Sources */,
 				CDCFF0302106862300016262 /* Segues.swift in Sources */,
 				CDCFF0342106937100016262 /* ExpenseTypeView.swift in Sources */,
 			);

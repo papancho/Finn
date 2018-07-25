@@ -7,29 +7,28 @@
 //
 
 import UIKit
+import TKSubmitTransition
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate, UITextFieldDelegate {
 
+    var btn: TKTransitionSubmitButton!
     @IBOutlet weak var loginBackgroundImage: UIImageView!
-    
     @IBOutlet weak var usernameEntryField: UITextField!
-    
     @IBOutlet weak var passwordEntryField: UITextField!
-    
     @IBOutlet weak var forgotPasswordLabel: UILabel!
-    
-    @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var accountSignUpText: UILabel!
+    @IBOutlet weak var loginButton: TKTransitionSubmitButton!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        usernameEntryField.delegate = self
+        passwordEntryField.delegate = self
+        usernameEntryField.returnKeyType = .done
+        passwordEntryField.returnKeyType = .done
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,7 +36,6 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     @IBAction func loginButtonPressed(_ sender: Any) {
         
         if let username = usernameEntryField.text, username.isEmpty {
@@ -50,11 +48,26 @@ class LoginViewController: UIViewController {
             return
         }
         
-        // TODO: check for invalid password
-        
-        
-        
+        loginButton.animate(1, completion: { () -> () in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let homeVC = storyboard.instantiateViewController(withIdentifier: "HomeViewController")
+            self.present(homeVC, animated: true, completion: nil)
+        })
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    // MARK: UIViewControllerTransitioningDelegate
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return TKFadeInAnimator(transitionDuration: 0.5, startingAlpha: 0.8)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return nil
+    }
 }

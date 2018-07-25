@@ -23,19 +23,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        BottomNavBar.floatingButton.setImage(UIImage(named: "plus"), for: .normal)
-        BottomNavBar.floatingButton.addTarget(self, action: #selector(addExpenseButtonTapped), for: .touchUpInside)
-
-        let hamburgerItem = UIBarButtonItem(image: UIImage(named:"hamburgerMenuIcon"), style: .plain, target: self, action: #selector(hamburgerMenuBarButtonItemTapped))
-
-        let transactionHistory =  UIBarButtonItem(image: UIImage(named:"expenseHistoryIcon"), style: .plain, target: self, action: #selector(hamburgerMenuBarButtonItemTapped))
-    
-        let leadingBarButtomItems = [hamburgerItem]
-        let trailingBarButtonItems = [transactionHistory]
-        
-        BottomNavBar.leadingBarButtonItems = leadingBarButtomItems
-        BottomNavBar.trailingBarButtonItems = trailingBarButtonItems
+        self.configureNavBar()
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,6 +31,24 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func configureNavBar() {
+        let hamburgerItem = UIBarButtonItem(image: UIImage(named:"hamburgerMenuIcon"), style: .plain, target: self, action: #selector(hamburgerMenuBarButtonItemTapped))
+        
+        let transactionHistory =  UIBarButtonItem(image: UIImage(named:"expenseHistoryIcon"), style: .plain, target: self, action: #selector(hamburgerMenuBarButtonItemTapped))
+        
+        let leadingBarButtomItems = [hamburgerItem]
+        let trailingBarButtonItems = [transactionHistory]
+        
+        BottomNavBar.leadingBarButtonItems = leadingBarButtomItems
+        BottomNavBar.trailingBarButtonItems = trailingBarButtonItems
+        
+        BottomNavBar.floatingButton.setImage(UIImage(named: "plus"), for: .normal)
+        BottomNavBar.floatingButton.layer.backgroundColor = UIColor.init(red: 21/255, green: 71/255, blue: 82/255, alpha: 1.0).cgColor
+        BottomNavBar.floatingButton.addTarget(self, action: #selector(addExpenseButtonTapped), for: .touchUpInside)
+        
+    }
+    
+    // IB Actions ********************
     @objc func addExpenseButtonTapped(_ sender: UIButton) {
         self.performSegue(withIdentifier: Segues.homePageToAddExpense, sender: self)
     }

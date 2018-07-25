@@ -84,7 +84,7 @@
                                 <color key="textColor" red="0.67191203170000002" green="0.68418861040000001" blue="0.66794121029999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5T-BW-ET4">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o5T-BW-ET4" customClass="TKTransitionSubmitButton" customModule="TKSubmitTransition">
                                 <rect key="frame" x="112.5" y="490" width="150" height="33"/>
                                 <color key="backgroundColor" red="0.082352941176470587" green="0.27843137254901962" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -95,7 +95,7 @@
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginButtonPressed:" destination="3ea-WI-e8z" eventType="touchUpInside" id="ucL-eI-jCO"/>
+                                    <action selector="loginButtonPressed:" destination="3ea-WI-e8z" eventType="touchUpInside" id="bP1-RA-ygE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? You can sign up here." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLw-3c-oiW">
@@ -137,7 +137,7 @@
                         <outlet property="accountSignUpText" destination="cLw-3c-oiW" id="V0w-vT-sTp"/>
                         <outlet property="forgotPasswordLabel" destination="Yjh-EN-jDI" id="KpF-YD-9VQ"/>
                         <outlet property="loginBackgroundImage" destination="Mcx-fF-jsz" id="jxG-Db-F4A"/>
-                        <outlet property="loginButton" destination="o5T-BW-ET4" id="7TA-su-VbP"/>
+                        <outlet property="loginButton" destination="o5T-BW-ET4" id="khp-nG-JSh"/>
                         <outlet property="passwordEntryField" destination="6N6-ns-XRH" id="9Fz-Rt-319"/>
                         <outlet property="usernameEntryField" destination="ksx-dg-ol6" id="ZAr-Gx-osB"/>
                     </connections>
