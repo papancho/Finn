@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol ExpenseEntryHeaderViewDelegate:AnyObject  {
+    func didPressHomeButton(sender: ExpenseEntryHeaderView)
+}
+
 class ExpenseEntryHeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var ExpenseTypeImage: UIImageView!
     @IBOutlet weak var ExpenseTypeLabel: UILabel!
+    
+    var delegate: ExpenseEntryHeaderViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,5 +59,9 @@ class ExpenseEntryHeaderView: UIView {
                 self.contentView.backgroundColor = UIColor.init(red: 233/255.0, green: 188/255.0, blue: 46/255.0, alpha: 1.0)
             }
         }
+    }
+    
+    @IBAction func homeButtonPressed(_ sender: Any) {
+        self.delegate?.didPressHomeButton(sender: self)
     }
 }

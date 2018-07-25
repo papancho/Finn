@@ -9,7 +9,7 @@
 import UIKit
 import TKSubmitTransition
 
-class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate {
+class LoginViewController: UIViewController, UIViewControllerTransitioningDelegate, UITextFieldDelegate {
 
     var btn: TKTransitionSubmitButton!
     @IBOutlet weak var loginBackgroundImage: UIImageView!
@@ -21,7 +21,10 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        usernameEntryField.delegate = self
+        passwordEntryField.delegate = self
+        usernameEntryField.returnKeyType = .done
+        passwordEntryField.returnKeyType = .done
     }
     
     override func viewDidLoad() {
@@ -51,6 +54,12 @@ class LoginViewController: UIViewController, UIViewControllerTransitioningDelega
             self.present(homeVC, animated: true, completion: nil)
         })
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        textField.resignFirstResponder()
+        return true
     }
     
     // MARK: UIViewControllerTransitioningDelegate
