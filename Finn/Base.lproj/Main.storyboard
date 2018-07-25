@@ -25,19 +25,48 @@
                                     <constraint firstAttribute="height" constant="80" id="4aV-2m-yhJ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVA-yd-zWJ">
-                                <rect key="frame" x="183" y="154" width="33" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeScreenHeader" translatesAutoresizingMaskIntoConstraints="NO" id="6gS-dE-6YK">
+                                <rect key="frame" x="0.0" y="-5" width="375" height="285"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="285" id="AY7-Jy-tU8"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome, Sabrina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kst-5L-3uE">
+                                <rect key="frame" x="30" y="75" width="291.5" height="49.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can review your expenses to the right, or add an expense using the '+' button below" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yrx-5h-yWf">
+                                <rect key="frame" x="34" y="154.5" width="306" height="70"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-0Q-nXS" userLabel="DividerBar">
+                                <rect key="frame" x="32" y="131" width="306" height="3"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="jeh-Rh-gav"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6gS-dE-6YK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vx-W0-Gyz"/>
                             <constraint firstItem="iiq-nA-E8V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A5D-pM-Pa1"/>
+                            <constraint firstItem="6gS-dE-6YK" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-5" id="E4j-g7-iuM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cW5-0Q-nXS" secondAttribute="trailing" constant="37" id="OZz-h4-UqE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6gS-dE-6YK" secondAttribute="trailing" id="WPY-xQ-oOv"/>
+                            <constraint firstItem="Kst-5L-3uE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Z6f-Td-g5g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iiq-nA-E8V" secondAttribute="trailing" id="dkr-vR-5ih"/>
+                            <constraint firstItem="yrx-5h-yWf" firstAttribute="top" secondItem="Kst-5L-3uE" secondAttribute="bottom" constant="30" id="kOP-MP-fvK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yrx-5h-yWf" secondAttribute="trailing" constant="35" id="lTh-KZ-CUi"/>
+                            <constraint firstItem="Kst-5L-3uE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="nrq-el-OAu"/>
+                            <constraint firstItem="yrx-5h-yWf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="34" id="o11-xF-SFO"/>
+                            <constraint firstItem="cW5-0Q-nXS" firstAttribute="top" secondItem="Kst-5L-3uE" secondAttribute="bottom" constant="6.5" id="phW-Zz-euT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="iiq-nA-E8V" secondAttribute="bottom" constant="5" id="vhT-bR-y3w"/>
+                            <constraint firstItem="cW5-0Q-nXS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="ylD-bz-dEY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -224,4 +253,7 @@
             <point key="canvasLocation" x="1848.8" y="131.78410794602701"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeScreenHeader" width="1400" height="654"/>
+    </resources>
 </document>
